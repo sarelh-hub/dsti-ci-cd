@@ -25,7 +25,7 @@ def get_email_from_input():
 def get_user_name_from_input():
     """ Not empty string. No spaces. """
     user_name =  input("Create your user name: ")
-    if (len(user_name) == 0 or " " in user_name):
+    if (len(user_name) == 0 or " " in user_name or len(user_name) > 20):
         print("User Name is not valid.")
     else:
         return user_name

@@ -30,6 +30,10 @@ def test_user_name_input_empty_string(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('\n'))
     assert get_user_name_from_input() is None
 
+def test_user_name_input_greater_20(monkeypatch):
+    monkeypatch.setattr('sys.stdin', io.StringIO('abcdefgh123456789101112134151617121314151617181920'))
+    assert get_user_name_from_input() is None
+
 def test_user_name_input_correct(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('Sara'))
     assert get_user_name_from_input() == "Sara"
